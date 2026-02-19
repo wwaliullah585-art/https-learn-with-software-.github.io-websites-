@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for responsive design and character encoding -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Learn With Software Engineer</title>
+    
+    <!-- Bootstrap 5 CSS from CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome icons from CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom internal CSS -->
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .navbar {
+            background-color: #2c3e50;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #3498db !important;
+        }
+        
+        .nav-link {
+            color: #ecf0f1 !important;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #3498db !important;
+            transform: translateY(-2px);
+        }
+        
+        .page-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-top: 56px;
+        }
+        
+        .page-title h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+        
+        .btn-primary {
+            background-color: #3498db;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        /* Course card styling with border and shadow */
+        .course-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        /* Course card header with color coding */
+        .course-header {
+            padding: 40px 20px;
+            color: white;
+            text-align: center;
+        }
+        
+        /* Icon styling in course cards */
+        .course-header i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .course-body {
+            padding: 30px;
+        }
+        
+        /* Course title styling */
+        .course-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        /* Course description styling */
+        .course-description {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        /* Course features list styling */
+        .course-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        
+        .course-features li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .course-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .course-features li i {
+            color: #27ae60;
+            margin-right: 10px;
+        }
+        
+        /* Price styling */
+        .course-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        /* Duration and level info */
+        .course-info {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 50px 0 20px;
+            margin-top: 80px;
+        }
+        
+        .social-link {
+            color: #3498db;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .social-link:hover {
+            color: #ecf0f1;
+            transform: translateY(-3px);
+        }
+        
+        .footer-text {
+            color: #95a5a6;
+        }
+        
+        /* Badge for most popular course */
+        .badge-popular {
+            background-color: #e74c3c;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR SECTION -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-code"></i> Learn With Software Engineer
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="category.html">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE TITLE SECTION -->
+    <section class="page-title">
+        <div class="container">
+            <h1>Our Courses</h1>
+            <p>Comprehensive learning programs designed for all skill levels</p>
+        </div>
+    </section>
+
+    <!-- COURSES SECTION - Display all available courses -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center">Featured Courses</h2>
+            
+            <!-- Row with 4 course cards -->
+            <div class="row g-4">
+                <!-- Course 1: Python Programming -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="course-card position-relative">
+                        <!-- Course header with background color -->
+                        <div class="course-header" style="background: linear-gradient(135deg, #3776ab 0%, #2c5aa0 100%);">
+                            <i class="fab fa-python"></i>
+                            <h3>Python</h3>
+                        </div>
+                        
+                        <!-- Course body with details -->
+                        <div class="course-body">
+                            <h5 class="course-title">Python Programming</h5>
+                            <p class="course-description">Master Python from fundamentals to advanced concepts</p>
+                            
+                            <!-- Course features list -->
+                            <ul class="course-features">
+                                <li><i class="fas fa-check"></i> 50+ Video Lessons</li>
+                                <li><i class="fas fa-check"></i> Real-world Projects</li>
+                                <li><i class="fas fa-check"></i> Lifetime Access</li>
+                                <li><i class="fas fa-check"></i> Certification</li>
+                            </ul>
+                            
+                            <div class="course-info">
+                                <small><i class="fas fa-clock"></i> 40 Hours | <i class="fas fa-graduation-cap"></i> Beginner to Advanced</small>
+                            </div>
+                            
+                            <div class="course-price">$99</div>
+                            <a href="contact.html" class="btn btn-primary w-100">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2: Web Development (Most Popular) -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="course-card position-relative">
+                        <!-- Badge for popular course -->
+                        <div class="badge-popular">
+                            <i class="fas fa-star"></i> Popular
+                        </div>
+                        
+                        <!-- Course header with background color -->
+                        <div class="course-header" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">
+                            <i class="fas fa-globe"></i>
+                            <h3>Web Dev</h3>
+                        </div>
+                        
+                        <!-- Course body with details -->
+                        <div class="course-body">
+                            <h5 class="course-title">Web Development</h5>
+                            <p class="course-description">Build responsive websites with HTML, CSS & JavaScript</p>
+                            
+                            <!-- Course features list -->
+                            <ul class="course-features">
+                                <li><i class="fas fa-check"></i> 60+ Video Lessons</li>
+                                <li><i class="fas fa-check"></i> Responsive Design</li>
+                                <li><i class="fas fa-check"></i> Live Projects</li>
+                                <li><i class="fas fa-check"></i> Job Support</li>
+                            </ul>
+                            
+                            <div class="course-info">
+                                <small><i class="fas fa-clock"></i> 50 Hours | <i class="fas fa-graduation-cap"></i> Beginner to Advanced</small>
+                            </div>
+                            
+                            <div class="course-price">$129</div>
+                            <a href="contact.html" class="btn btn-primary w-100">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3: Data Science -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="course-card position-relative">
+                        <!-- Course header with background color -->
+                        <div class="course-header" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+                            <i class="fas fa-chart-bar"></i>
+                            <h3>Data Science</h3>
+                        </div>
+                        
+                        <!-- Course body with details -->
+                        <div class="course-body">
+                            <h5 class="course-title">Data Science</h5>
+                            <p class="course-description">Learn data analysis, visualization and machine learning</p>
+                            
+                            <!-- Course features list -->
+                            <ul class="course-features">
+                                <li><i class="fas fa-check"></i> 45+ Video Lessons</li>
+                                <li><i class="fas fa-check"></i> Data Analysis</li>
+                                <li><i class="fas fa-check"></i> ML Algorithms</li>
+                                <li><i class="fas fa-check"></i> Projects & Datasets</li>
+                            </ul>
+                            
+                            <div class="course-info">
+                                <small><i class="fas fa-clock"></i> 45 Hours | <i class="fas fa-graduation-cap"></i> Intermediate</small>
+                            </div>
+                            
+                            <div class="course-price">$139</div>
+                            <a href="contact.html" class="btn btn-primary w-100">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 4: Software Engineering -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="course-card position-relative">
+                        <!-- Course header with background color -->
+                        <div class="course-header" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%);">
+                            <i class="fas fa-cogs"></i>
+                            <h3>SE Career</h3>
+                        </div>
+                        
+                        <!-- Course body with details -->
+                        <div class="course-body">
+                            <h5 class="course-title">Software Engineering</h5>
+                            <p class="course-description">Master design patterns, architecture and career growth</p>
+                            
+                            <!-- Course features list -->
+                            <ul class="course-features">
+                                <li><i class="fas fa-check"></i> 55+ Video Lessons</li>
+                                <li><i class="fas fa-check"></i> Design Patterns</li>
+                                <li><i class="fas fa-check"></i> Career Guidance</li>
+                                <li><i class="fas fa-check"></i> Interview Prep</li>
+                            </ul>
+                            
+                            <div class="course-info">
+                                <small><i class="fas fa-clock"></i> 55 Hours | <i class="fas fa-graduation-cap"></i> Advanced</small>
+                            </div>
+                            
+                            <div class="course-price">$149</div>
+                            <a href="contact.html" class="btn btn-primary w-100">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional courses row -->
+            <div class="row g-4 mt-5">
+                <!-- Course 5: JavaScript Mastery -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="course-card position-relative">
+                        <div class="course-header" style="background: linear-gradient(135deg, #f39c12 0%, #d68910 100%);">
+                            <i class="fab fa-js-square"></i>
+                            <h3>JavaScript</h3>
+                        </div>
+                        
+                        <div class="course-body">
+                            <h5 class="course-title">JavaScript Mastery</h5>
+                            <p class="course-description">Complete JavaScript guide for modern web development</p>
+                            
+                            <ul class="course-features">
+                                <li><i class="fas fa-check"></i> 40+ Lessons</li>
+                                <li><i class="fas fa-check"></i> ES6+ Features</li>
+                                <li><i class="fas fa-check"></i> Async Programming</li>
+                                <li><i class="fas fa-check"></i> DOM Manipulation</li>
+                            </ul>
+                            
+                            <div class="course-info">
+                                <small><i class="fas fa-clock"></i> 35 Hours | <i class="fas fa-graduation-cap"></i> Intermediate</small>
+                            </div>
+                            
+                            <div class="course-price">$89</div>
+                            <a href="contact.html" class="btn btn-primary w-100">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 6: React.js Framework -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="course-card position-relative">
+                        <div class="course-header" style="background: linear-gradient(135deg, #61dafb 0%, #4fa8c5 100%);">
+                            <i class="fab fa-react"></i>
+                            <h3>React.js</h3>
+                        </div>
+                        
+                        <div class="course-body">
+                            <h5 class="course-title">React.js Framework</h5>
+                            <p class="course-description">Build dynamic UIs with React and modern best practices</p>
+                            
+                            <ul class="course-features">
+                                <li><i class="fas fa-check"></i> 45+ Lessons</li>
+                                <li><i class="fas fa-check"></i> Hooks & State</li>
+                                <li><i class="fas fa-check"></i> Component Design</li>
+                                <li><i class="fas fa-check"></i> Real Projects</li>
+                            </ul>
+                            
+                            <div class="course-info">
+                                <small><i class="fas fa-clock"></i> 40 Hours | <i class="fas fa-graduation-cap"></i> Intermediate</small>
+                            </div>
+                            
+                            <div class="course-price">$109</div>
+                            <a href="contact.html" class="btn btn-primary w-100">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 7: Database Design -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="course-card position-relative">
+                        <div class="course-header" style="background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);">
+                            <i class="fas fa-database"></i>
+                            <h3>Databases</h3>
+                        </div>
+                        
+                        <div class="course-body">
+                            <h5 class="course-title">Database Design</h5>
+                            <p class="course-description">Master SQL, NoSQL and database optimization</p>
+                            
+                            <ul class="course-features">
+                                <li><i class="fas fa-check"></i> SQL Mastery</li>
+                                <li><i class="fas fa-check"></i> NoSQL Databases</li>
+                                <li><i class="fas fa-check"></i> Query Optimization</li>
+                                <li><i class="fas fa-check"></i> Indexing Strategies</li>
+                            </ul>
+                            
+                            <div class="course-info">
+                                <small><i class="fas fa-clock"></i> 30 Hours | <i class="fas fa-graduation-cap"></i> Intermediate</small>
+                            </div>
+                            
+                            <div class="course-price">$99</div>
+                            <a href="contact.html" class="btn btn-primary w-100">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 8: DevOps Essentials -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="course-card position-relative">
+                        <div class="course-header" style="background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);">
+                            <i class="fas fa-server"></i>
+                            <h3>DevOps</h3>
+                        </div>
+                        
+                        <div class="course-body">
+                            <h5 class="course-title">DevOps Essentials</h5>
+                            <p class="course-description">Learn deployment, CI/CD, and cloud infrastructure basics</p>
+                            
+                            <ul class="course-features">
+                                <li><i class="fas fa-check"></i> Docker & Kubernetes</li>
+                                <li><i class="fas fa-check"></i> CI/CD Pipelines</li>
+                                <li><i class="fas fa-check"></i> Cloud Deployment</li>
+                                <li><i class="fas fa-check"></i> Monitoring & Logs</li>
+                            </ul>
+                            
+                            <div class="course-info">
+                                <small><i class="fas fa-clock"></i> 45 Hours | <i class="fas fa-graduation-cap"></i> Advanced</small>
+                            </div>
+                            
+                            <div class="course-price">$129</div>
+                            <a href="contact.html" class="btn btn-primary w-100">Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="section-padding bg-primary text-white text-center">
+        <div class="container">
+            <h2 class="mb-3">Can't Decide Which Course?</h2>
+            <p class="fs-5 mb-4">Contact us for personalized recommendations based on your goals</p>
+            <a href="contact.html" class="btn btn-light btn-lg">
+                <i class="fas fa-envelope"></i> Get Free Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5 class="mb-3">About Us</h5>
+                    <p class="footer-text">We provide quality education in programming and software engineering for everyone</p>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="footer-text text-decoration-none">Home</a></li>
+                        <li><a href="about.html" class="footer-text text-decoration-none">About</a></li>
+                        <li><a href="services.html" class="footer-text text-decoration-none">Services</a></li>
+                        <li><a href="blog.html" class="footer-text text-decoration-none">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <h5 class="mb-3">Categories</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="category.html" class="footer-text text-decoration-none">Python</a></li>
+                        <li><a href="category.html" class="footer-text text-decoration-none">Web Development</a></li>
+                        <li><a href="category.html" class="footer-text text-decoration-none">Data Science</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-3 mb-4">
+                    <h5 class="mb-3">Follow Us</h5>
+                    <a href="https://web.facebook.com/profile.php?id=61578725471951" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="https://github.com" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/feed/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/@learn_with_software_engineer" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <hr class="bg-secondary">
+            <div class="text-center footer-text">
+                <p>&copy; 2024 Learn With Software Engineer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
